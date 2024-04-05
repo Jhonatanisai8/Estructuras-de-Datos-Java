@@ -248,42 +248,6 @@ public class Lista {
         JOptionPane.showMessageDialog(null, "Lista Borrada");
     }
 
-    //metodo para ordernar la lista
-    public void ordenar() {
-        int t = 1;
-        int c = 1;
-        Nodo act = inicio;
-        while (act.siguiente != null) {
-            act = act.siguiente;
-            c++;
-        }
-
-        /*
-        Estas dos variables guardan el valor temporalmente
-        
-         */
-        int tem = 0;
-        do {
-            act = inicio;
-            Nodo sig = act.siguiente;
-            while (act.siguiente != null) {
-                if (act.dato > sig.dato) {
-                    tem = act.dato;
-
-                    act.dato = sig.dato;
-                    sig.dato = tem;
-
-                    act = act.siguiente;
-                    sig = sig.siguiente;
-                } else {
-                    act = act.siguiente;
-                    sig = sig.siguiente;
-                }
-            }
-        } while (t <= c);
-        mostrarLista();
-    }
-
     public void ordenarLista() {
         int aux;
         if (!estaVacia()) {
@@ -355,7 +319,7 @@ public class Lista {
 
     //metodo para conocer el ultimo nodo de la lista
     public int ultimoNodo() {
-         int primerElemento = fin.dato;
+        int primerElemento = fin.dato;
         return primerElemento;
     }
 

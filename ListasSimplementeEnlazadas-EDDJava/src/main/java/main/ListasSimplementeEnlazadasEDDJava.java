@@ -30,7 +30,7 @@ public class ListasSimplementeEnlazadasEDDJava {
                         17. Conocer el Promedio total de la Lista
                         18. Total de Nodos Negativos Sin incluir al "0"
                         19. Total de Nodos Positivos Sin incluir al "0"
-                        20.Total de Ceros Ingresados
+                        20. Total de Ceros Ingresados
                         21. Inicio y Inicio de Siguiente
                         22. Numero Mayor de la Lista
                         23. Numero Menor de la Lista
