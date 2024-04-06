@@ -1,5 +1,7 @@
 package com.mycompany;
 
+import javax.swing.JOptionPane;
+
 public class ListaCircular {
 
     NodoCircular ultimo;
@@ -70,4 +72,54 @@ public class ListaCircular {
         }
         return encontrado == true;
     }
+
+    //metodo para borar nodos
+    public void eliminarNodoAlFinal() {
+
+        NodoCircular actual = this.ultimo;
+        NodoCircular anterior = null;
+
+        // Recorrer la lista hasta encontrar el nodo anterior al último
+        while (actual.siguiente != this.ultimo) {
+            anterior = actual;
+            actual = actual.siguiente;
+        }
+
+        // Si la lista solo tiene un nodo
+        if (anterior == null) {
+            this.ultimo = null;
+        } else {
+            anterior.siguiente = this.ultimo;
+        }
+
+        // Eliminar el último nodo de la memoria
+        actual = null;
+        JOptionPane.showMessageDialog(null, "Nodo eliminado: " + actual, "ATENCION", 3);
+    }
+
+    public int eliminarNodoAlInicio() {
+
+        int valorEliminado = this.ultimo.dato;
+        NodoCircular actual = this.ultimo;
+        NodoCircular anterior = null;
+
+        // Recorrer la lista hasta encontrar el nodo anterior al primero
+        while (actual.siguiente != this.ultimo) {
+            anterior = actual;
+            actual = actual.siguiente;
+        }
+
+        // Si la lista solo tiene un nodo
+        if (anterior == null) {
+            this.ultimo = null;
+        } else {
+            anterior.siguiente = this.ultimo;
+        }
+
+        // Eliminar el primer nodo de la memoria
+        actual = null;
+        
+        return valorEliminado;
+    }
+
 }

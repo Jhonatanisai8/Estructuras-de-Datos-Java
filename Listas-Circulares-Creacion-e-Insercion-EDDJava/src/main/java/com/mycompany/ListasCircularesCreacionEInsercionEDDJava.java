@@ -3,7 +3,7 @@ package com.mycompany;
 import javax.swing.JOptionPane;
 
 public class ListasCircularesCreacionEInsercionEDDJava {
-    
+
     public static void main(String[] args) {
         int opcion;
         int elemento;
@@ -15,7 +15,9 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                          2. Agregar Un Elemento
                          3. Mostrar la Lista
                          4. ¿Buscar Elemento y Borrar?
-                         5. Salir""";
+                         5. Borrar Nodo del fin
+                         6. Borrar Nodo del Inicio
+                         7. Salir""";
         do {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null, mensaje, "MENU DE OPCIONES", JOptionPane.CLOSED_OPTION));
             switch (opcion) {
@@ -51,12 +53,27 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                     }
                     break;
                 case 5:
+                    if (!listaCircular.estaVacia()) {
+                        listaCircular.eliminarNodoAlFinal();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "La lista circular esta vacia", "ATENCIÓN", 2);
+                    }
+                    break;
+                case 6:
+                    if (listaCircular.estaVacia() == true) {
+                        JOptionPane.showMessageDialog(null, "La lista esta vacia ");
+                    } else {
+                        int valorEliminado = listaCircular.eliminarNodoAlInicio();
+                        JOptionPane.showMessageDialog(null, "Noto elimado es: " + valorEliminado, "ATENCION", 3);
+                    }
+                    break;
+                case 7:
                     JOptionPane.showMessageDialog(null, "Gracias por tu participacion", "Bay", JOptionPane.WARNING_MESSAGE);
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Elige una opcion Valida", "ATENCION", JOptionPane.CANCEL_OPTION);
                     break;
             }
-        } while (opcion != 5);
+        } while (opcion != 7);
     }
 }
