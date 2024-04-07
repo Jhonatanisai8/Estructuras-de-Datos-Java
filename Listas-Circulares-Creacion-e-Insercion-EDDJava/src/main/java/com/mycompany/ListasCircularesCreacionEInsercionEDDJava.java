@@ -3,7 +3,7 @@ package com.mycompany;
 import javax.swing.JOptionPane;
 
 public class ListasCircularesCreacionEInsercionEDDJava {
-    
+
     public static void main(String[] args) {
         int opcion;
         int elemento;
@@ -20,7 +20,7 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                          7. Nodo Mayor
                          8. Nodo Menor
                          9. Suma de Nodos
-                         9. Salir""";
+                        10. Salir""";
         do {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null, mensaje, "MENU DE OPCIONES", JOptionPane.CLOSED_OPTION));
             switch (opcion) {
@@ -89,7 +89,6 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                     }
                     break;
                 case 9:
-                    
                     if (listaCircular.estaVacia()) {
                         JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
                     } else {

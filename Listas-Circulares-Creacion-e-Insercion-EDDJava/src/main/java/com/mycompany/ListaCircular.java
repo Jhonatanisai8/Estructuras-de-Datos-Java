@@ -79,7 +79,7 @@ public class ListaCircular {
         aux = ultimo.siguiente;
 
         do {
-            suma = aux.dato;
+            suma += aux.dato;
             aux = aux.siguiente;
         } while (aux != ultimo.siguiente);
         return suma;
