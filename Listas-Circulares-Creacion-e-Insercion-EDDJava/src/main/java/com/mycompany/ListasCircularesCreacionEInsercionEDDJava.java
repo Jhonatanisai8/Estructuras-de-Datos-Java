@@ -28,7 +28,8 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         14. Multiplicacion de Nodos Negativos
                         15. Contador de Nodos Pares
                         16. Contador de Nodos impares
-                        17. Salir""";
+                        17. Promedio de Nodos
+                        18. Salir""";
         do {
             try {
 
@@ -184,6 +185,17 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         }
                         break;
                     case 17:
+                        if (listaCircular.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
+                        } else {
+                            double promedio;
+                            promedio = listaCircular.promedioNodos();
+                            JOptionPane.showMessageDialog(null, """
+                                                                Promedio de todos los Nodos
+                                                                """ + promedio, "ATENCIÓM", 2);
+                        }
+                        break;
+                    case 18:
                         JOptionPane.showMessageDialog(null, "Gracias por tu participacion", "Bay", JOptionPane.WARNING_MESSAGE);
                         break;
                     default:
@@ -193,6 +205,6 @@ public class ListasCircularesCreacionEInsercionEDDJava {
             } catch (HeadlessException | NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Error en: " + e.toString(), "WARNING", 3);
             }
-        } while (opcion != 17);
+        } while (opcion != 18);
     }
 }

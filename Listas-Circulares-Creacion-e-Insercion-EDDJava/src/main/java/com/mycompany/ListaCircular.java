@@ -182,6 +182,23 @@ public class ListaCircular {
         return contador;
     }
 
+    //metodo para conocer el promedio de todos los nodos
+    public double promedioNodos() {
+        double promedio;
+        int contador = 0;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+
+        //recorer la lista
+        do {
+            contador++;
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+
+        promedio = (double) sumaNodos() / contador;
+        return promedio;
+    }
+
     //metodo para eliminar nodo
     public boolean eliminarNodo(int elemento) {
         //creamos un nodo auxiliar
