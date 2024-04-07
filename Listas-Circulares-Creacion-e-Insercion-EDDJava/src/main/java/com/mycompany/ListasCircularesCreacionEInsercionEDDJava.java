@@ -22,7 +22,8 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                          9. Suma de todo los Nodos
                         10. Suma de Nodos Positivos
                         11. Suma de Nodos Negativos
-                        12. Salir""";
+                        12. Multiplicacion de todo los Nodos
+                        13. Salir""";
         do {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null, mensaje, "MENU DE OPCIONES", JOptionPane.CLOSED_OPTION));
             switch (opcion) {
@@ -119,12 +120,22 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                     }
                     break;
                 case 12:
+                    if (listaCircular.estaVacia()) {
+                        JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
+                    } else {
+                        int multiplicacion;
+                        multiplicacion = listaCircular.multiplicacionNodosNegativos();
+                        JOptionPane.showMessageDialog(null, "Multiplicacion de Todos los Nodos: "
+                                + "\t" + multiplicacion, "ATENCIÓM", 2);
+                    }
+                    break;
+                case 13:
                     JOptionPane.showMessageDialog(null, "Gracias por tu participacion", "Bay", JOptionPane.WARNING_MESSAGE);
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Elige una opcion Valida", "ATENCION", JOptionPane.CANCEL_OPTION);
                     break;
             }
-        } while (opcion != 12);
+        } while (opcion != 13);
     }
 }
