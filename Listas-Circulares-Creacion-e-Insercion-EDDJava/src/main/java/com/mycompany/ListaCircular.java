@@ -72,6 +72,19 @@ public class ListaCircular {
         return nodoMenor;
     }
 
+    //metodo para la la suma de los nodos
+    public int sumaNodos() {
+        int suma = 0;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+
+        do {
+            suma = aux.dato;
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+        return suma;
+    }
+
     //metodo para eliminar nodo
     public boolean eliminarNodo(int elemento) {
         //creamos un nodo auxiliar
