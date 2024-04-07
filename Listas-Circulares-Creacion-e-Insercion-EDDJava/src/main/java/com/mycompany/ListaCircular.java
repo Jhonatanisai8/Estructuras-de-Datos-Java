@@ -42,6 +42,21 @@ public class ListaCircular {
         return mensaje;
     }
 
+    //metodo para encontrar el mayor
+    public int nodoMayor() {
+        NodoCircular recorrer;
+        recorrer = ultimo.siguiente;
+        int nodoMayor = ultimo.dato;
+
+        do {
+            if (recorrer.dato > nodoMayor) {
+                nodoMayor = recorrer.dato;
+            }
+            recorrer = recorrer.siguiente;
+        } while (recorrer != ultimo.siguiente);
+        return nodoMayor;
+    }
+
     //metodo para eliminar nodo
     public boolean eliminarNodo(int elemento) {
         //creamos un nodo auxiliar
@@ -118,7 +133,7 @@ public class ListaCircular {
 
         // Eliminar el primer nodo de la memoria
         actual = null;
-        
+
         return valorEliminado;
     }
 

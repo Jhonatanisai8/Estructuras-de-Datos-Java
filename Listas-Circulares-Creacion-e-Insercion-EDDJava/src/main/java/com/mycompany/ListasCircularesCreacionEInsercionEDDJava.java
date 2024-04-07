@@ -3,7 +3,7 @@ package com.mycompany;
 import javax.swing.JOptionPane;
 
 public class ListasCircularesCreacionEInsercionEDDJava {
-
+    
     public static void main(String[] args) {
         int opcion;
         int elemento;
@@ -17,7 +17,8 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                          4. ¿Buscar Elemento y Borrar?
                          5. Borrar Nodo del fin
                          6. Borrar Nodo del Inicio
-                         7. Salir""";
+                         7. Nodo Mayor
+                         8. Salir""";
         do {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null, mensaje, "MENU DE OPCIONES", JOptionPane.CLOSED_OPTION));
             switch (opcion) {
@@ -68,12 +69,21 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                     }
                     break;
                 case 7:
+                    if (listaCircular.estaVacia()) {
+                        JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
+                    } else {
+                        int nodo;
+                        nodo = listaCircular.nodoMayor();
+                        JOptionPane.showMessageDialog(null, "Nodo mayor de la lista: " + nodo, "ATENCIÓN", 3);
+                    }
+                    break;
+                case 8:
                     JOptionPane.showMessageDialog(null, "Gracias por tu participacion", "Bay", JOptionPane.WARNING_MESSAGE);
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Elige una opcion Valida", "ATENCION", JOptionPane.CANCEL_OPTION);
                     break;
             }
-        } while (opcion != 7);
+        } while (opcion != 8);
     }
 }
