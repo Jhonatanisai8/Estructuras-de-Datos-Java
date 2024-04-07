@@ -244,6 +244,21 @@ public class ListaCircular {
         return df.format(promedio);
     }
 
+    //metodo para el promedio de nodos positivos
+    public String promedioNodosPositivos() {
+        double promedio;
+        promedio = (double) sumaNodosPositivos() / contadorNodosPositivos();
+        DecimalFormat df = new DecimalFormat("#.00");
+        return df.format(promedio);
+    }
+
+    public String promedioNodosNegativos() {
+        double promedio;
+        promedio = sumaNodosNegativos() / contadorNodosNegativos();
+        DecimalFormat df = new DecimalFormat("#.00");
+        return df.format(promedio);
+    }
+
     //metodo para conocer el promedio de los nodos positivos
     public int contadorNodosPositivos() {
         int contador = 0;

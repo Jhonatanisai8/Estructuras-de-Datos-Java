@@ -36,7 +36,9 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         22. Promedio de Nodos Impares
                         23. Contador de Nodos Positivos
                         24. Contador de Nodos Negativos
-                        25. Salir""";
+                        25. Promedio de Nodos Positivos
+                        26. Promedio de Nodos Negativos
+                        27. Salir""";
         do {
             try {
 
@@ -276,6 +278,24 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         }
                         break;
                     case 25:
+                        if (listaCircular.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCION", 3);
+                        } else {
+                            String promedio = listaCircular.promedioNodosPositivos();
+                            JOptionPane.showMessageDialog(null, "Promedio de Nodos Positivos: "
+                                    + "\t: " + promedio, "NODOS POSITIVOS", 2);
+                        }
+                        break;
+                    case 26:
+                        if (listaCircular.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCION", 3);
+                        } else {
+                            String promedio = listaCircular.promedioNodosNegativos();
+                            JOptionPane.showMessageDialog(null, "Promedio de Nodos Negativos: "
+                                    + "\t: " + promedio, "NODOS NEGATIVOS", 2);
+                        }
+                        break;
+                    case 27:
                         JOptionPane.showMessageDialog(null, "Gracias por tu participacion", "Bay", JOptionPane.WARNING_MESSAGE);
                         break;
                     default:
@@ -285,6 +305,6 @@ public class ListasCircularesCreacionEInsercionEDDJava {
             } catch (HeadlessException | NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Error en: " + e.toString(), "WARNING", 3);
             }
-        } while (opcion != 25);
+        } while (opcion != 27);
     }
 }
