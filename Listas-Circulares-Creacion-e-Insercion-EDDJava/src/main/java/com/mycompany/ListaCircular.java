@@ -199,6 +199,33 @@ public class ListaCircular {
         return promedio;
     }
 
+    //metodo para conocer la suma de los nodos pares
+    public int sumaNodosPares() {
+        int suma = 0;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+        do {
+            if ((aux.dato % 2) == 0) {
+                suma += aux.dato;
+            }
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+        return suma;
+    }
+
+    public int sumaNodosImpares() {
+        int suma = 0;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+        do {
+            if ((aux.dato % 2) != 0) {
+                suma += aux.dato;
+            }
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+        return suma;
+    }
+
     //contador de nodos pares
     public int contadorNodos() {
         int contador = 0;
