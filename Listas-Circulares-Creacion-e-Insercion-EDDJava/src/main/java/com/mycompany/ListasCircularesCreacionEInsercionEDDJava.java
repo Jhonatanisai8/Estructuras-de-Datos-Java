@@ -26,10 +26,11 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         12. Multiplicacion de todo los Nodos
                         13. Multiplicacion de Nodos Positivos
                         14. Multiplicacion de Nodos Negativos
-                        15. Contador de Nodos Pares
-                        16. Contador de Nodos impares
-                        17. Promedio de Nodos
-                        18. Salir""";
+                        15. Contador de Todos los Nodos
+                        16. Contador de Nodos Pares
+                        17. Contador de Nodos impares
+                        18. Promedio de Nodos
+                        19. Salir""";
         do {
             try {
 
@@ -167,13 +168,24 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                             JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
                         } else {
                             int contador;
+                            contador = listaCircular.contadorNodos();
+                            JOptionPane.showMessageDialog(null, """
+                                                                Total de todos Nodos
+                                                                """ + contador, "ATENCIÓM", 2);
+                        }
+                        break;
+                    case 16:
+                        if (listaCircular.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
+                        } else {
+                            int contador;
                             contador = listaCircular.contadorNodosPares();
                             JOptionPane.showMessageDialog(null, """
                                                                 Total de Nodos Pares
                                                                 """ + contador, "ATENCIÓM", 2);
                         }
                         break;
-                    case 16:
+                    case 17:
                         if (listaCircular.estaVacia()) {
                             JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
                         } else {
@@ -184,7 +196,7 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                                                                 """ + contador, "ATENCIÓM", 2);
                         }
                         break;
-                    case 17:
+                    case 18:
                         if (listaCircular.estaVacia()) {
                             JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
                         } else {
@@ -195,7 +207,7 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                                                                 """ + promedio, "ATENCIÓM", 2);
                         }
                         break;
-                    case 18:
+                    case 19:
                         JOptionPane.showMessageDialog(null, "Gracias por tu participacion", "Bay", JOptionPane.WARNING_MESSAGE);
                         break;
                     default:
@@ -205,6 +217,6 @@ public class ListasCircularesCreacionEInsercionEDDJava {
             } catch (HeadlessException | NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Error en: " + e.toString(), "WARNING", 3);
             }
-        } while (opcion != 18);
+        } while (opcion != 19);
     }
 }

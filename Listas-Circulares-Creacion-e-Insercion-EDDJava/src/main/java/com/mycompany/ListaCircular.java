@@ -199,6 +199,18 @@ public class ListaCircular {
         return promedio;
     }
 
+    //contador de nodos pares
+    public int contadorNodos() {
+        int contador = 0;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+        do {
+            contador++;
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+        return contador;
+    }
+
     //metodo para eliminar nodo
     public boolean eliminarNodo(int elemento) {
         //creamos un nodo auxiliar
