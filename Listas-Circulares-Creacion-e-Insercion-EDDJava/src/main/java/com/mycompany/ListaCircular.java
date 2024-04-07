@@ -57,6 +57,21 @@ public class ListaCircular {
         return nodoMayor;
     }
 
+    //metodo para encontrar el nodo menor
+    public int nodoMenor() {
+        NodoCircular recorrer;
+        recorrer = ultimo.siguiente;
+        int nodoMenor = ultimo.dato;
+
+        do {
+            if (recorrer.dato < nodoMenor) {
+                nodoMenor = recorrer.dato;
+            }
+            recorrer = recorrer.siguiente;
+        } while (recorrer != ultimo.siguiente);
+        return nodoMenor;
+    }
+
     //metodo para eliminar nodo
     public boolean eliminarNodo(int elemento) {
         //creamos un nodo auxiliar
