@@ -1,5 +1,6 @@
 package com.mycompany;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 public class ListaCircular {
@@ -224,6 +225,23 @@ public class ListaCircular {
             aux = aux.siguiente;
         } while (aux != ultimo.siguiente);
         return suma;
+    }
+
+    //metodo para conocer el promedio de nodos pares
+    public String promedioNodosPares() {
+        double promedio;
+        promedio = (double) sumaNodosPares() / contadorNodosPares();
+        DecimalFormat df = new DecimalFormat("#.00");
+
+        return df.format(promedio);
+    }
+
+    //metodo para conocer el promedio de nodos impares
+    public String promedioNodosImpares() {
+        double promedio;
+        promedio = (double) sumaNodosImpares() / contadorNodosImpares();
+        DecimalFormat df = new DecimalFormat("#.00");
+        return df.format(promedio);
     }
 
     //contador de nodos pares

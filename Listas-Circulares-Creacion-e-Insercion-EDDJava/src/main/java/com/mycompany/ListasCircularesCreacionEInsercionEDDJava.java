@@ -32,7 +32,9 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         18. Promedio de Nodos
                         19. Suma de Nodos Pares
                         20. Suma de Nodos Impares
-                        21. Salir""";
+                        21. Promedio Nodos Pares
+                        22. Promedio de Nodos Impares
+                        22. Salir""";
         do {
             try {
 
@@ -230,6 +232,26 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         }
                         break;
                     case 21:
+                        if (listaCircular.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
+                        } else {
+                            String promedio = listaCircular.promedioNodosPares();
+                            JOptionPane.showMessageDialog(null, """
+                                                                Promedio de Nodos Pares 
+                                                                :  """ + promedio, "PROMEDIO DE NODOS PARES", 3);
+                        }
+                        break;
+                    case 22:
+                        if (listaCircular.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
+                        } else {
+                            String promedio = listaCircular.promedioNodosImpares();
+                            JOptionPane.showMessageDialog(null, """
+                                                                Promedio de Nodos Impares 
+                                                                :  """ + promedio, "PROMEDIO DE NODOS IMPARES", 3);
+                        }
+                        break;
+                    case 23:
                         JOptionPane.showMessageDialog(null, "Gracias por tu participacion", "Bay", JOptionPane.WARNING_MESSAGE);
                         break;
                     default:
@@ -239,6 +261,6 @@ public class ListasCircularesCreacionEInsercionEDDJava {
             } catch (HeadlessException | NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Error en: " + e.toString(), "WARNING", 3);
             }
-        } while (opcion != 21);
+        } while (opcion != 23);
     }
 }
