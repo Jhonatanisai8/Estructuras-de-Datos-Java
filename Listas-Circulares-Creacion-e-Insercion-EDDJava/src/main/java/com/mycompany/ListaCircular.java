@@ -114,12 +114,40 @@ public class ListaCircular {
     }
 
     //metodo para conocer la multiplicacio de todos los nodos
-    public int multiplicacionNodosNegativos() {
+    public int multiplicacionNodos() {
         int multiplicacion = 1;
         NodoCircular aux;
         aux = ultimo.siguiente;
         do {
             multiplicacion *= aux.dato;
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+        return multiplicacion;
+    }
+
+    //multiplicacaion de nodos positivos
+    public int multiplicacionNodosPositivos() {
+        int multiplicacion = 1;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+        do {
+            if (aux.dato > 0) {
+                multiplicacion *= aux.dato;
+            }
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+        return multiplicacion;
+    }
+
+    //metodo para sumar los nodos negativos
+    public int multiplicacionNodosNegativos() {
+        int multiplicacion = 1;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+        do {
+            if (aux.dato < 0) {
+                multiplicacion *= aux.dato;
+            }
             aux = aux.siguiente;
         } while (aux != ultimo.siguiente);
         return multiplicacion;
