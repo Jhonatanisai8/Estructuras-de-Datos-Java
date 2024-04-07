@@ -85,6 +85,34 @@ public class ListaCircular {
         return suma;
     }
 
+    //suma de nodos positivos
+    public int sumaNodosPositivos() {
+        int suma = 0;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+        do {
+            if (aux.dato > 0) {
+                suma += aux.dato;
+            }
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+        return suma;
+    }
+
+    //suma de nodos negativos
+    public int sumaNodosNegativos() {
+        int suma = 0;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+        do {
+            if (aux.dato < 0) {
+                suma += aux.dato;
+            }
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+        return suma;
+    }
+
     //metodo para eliminar nodo
     public boolean eliminarNodo(int elemento) {
         //creamos un nodo auxiliar

@@ -19,8 +19,10 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                          6. Borrar Nodo del Inicio
                          7. Nodo Mayor
                          8. Nodo Menor
-                         9. Suma de Nodos
-                        10. Salir""";
+                         9. Suma de todo los Nodos
+                        10. Suma de Nodos Positivos
+                        11. Suma de Nodos Negativos
+                        12. Salir""";
         do {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null, mensaje, "MENU DE OPCIONES", JOptionPane.CLOSED_OPTION));
             switch (opcion) {
@@ -97,12 +99,32 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                     }
                     break;
                 case 10:
+                    if (listaCircular.estaVacia()) {
+                        JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
+                    } else {
+                        int suma;
+                        suma = listaCircular.sumaNodosPositivos();
+                        JOptionPane.showMessageDialog(null, "Suma de los Nodos Positvos: "
+                                + "\t" + suma, "ATENCIÓM", 2);
+                    }
+                    break;
+                case 11:
+                    if (listaCircular.estaVacia()) {
+                        JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
+                    } else {
+                        int suma;
+                        suma = listaCircular.sumaNodosNegativos();
+                        JOptionPane.showMessageDialog(null, "Suma de los Nodos Negativos: "
+                                + "\t" + suma, "ATENCIÓM", 2);
+                    }
+                    break;
+                case 12:
                     JOptionPane.showMessageDialog(null, "Gracias por tu participacion", "Bay", JOptionPane.WARNING_MESSAGE);
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Elige una opcion Valida", "ATENCION", JOptionPane.CANCEL_OPTION);
                     break;
             }
-        } while (opcion != 10);
+        } while (opcion != 12);
     }
 }
