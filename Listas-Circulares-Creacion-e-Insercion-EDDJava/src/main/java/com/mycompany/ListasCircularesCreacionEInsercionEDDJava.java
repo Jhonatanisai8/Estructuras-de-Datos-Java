@@ -26,7 +26,9 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         12. Multiplicacion de todo los Nodos
                         13. Multiplicacion de Nodos Positivos
                         14. Multiplicacion de Nodos Negativos
-                        15. Salir""";
+                        15. Contador de Nodos Pares
+                        16. Contador de Nodos impares
+                        17. Salir""";
         do {
             try {
 
@@ -110,8 +112,9 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         } else {
                             int suma;
                             suma = listaCircular.sumaNodosPositivos();
-                            JOptionPane.showMessageDialog(null, "Suma de los Nodos Positvos: "
-                                    + "\t" + suma, "ATENCIÓM", 2);
+                            JOptionPane.showMessageDialog(null, """
+                                                                Suma de los Nodos Positvos: 
+                                                                """ + suma, "ATENCIÓM", 2);
                         }
                         break;
                     case 11:
@@ -120,8 +123,9 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         } else {
                             int suma;
                             suma = listaCircular.sumaNodosNegativos();
-                            JOptionPane.showMessageDialog(null, "Suma de los Nodos Negativos: "
-                                    + "\t" + suma, "ATENCIÓM", 2);
+                            JOptionPane.showMessageDialog(null, """
+                                                                Suma de los Nodos Negativos: 
+                                                                """ + suma, "ATENCIÓM", 2);
                         }
                         break;
                     case 12:
@@ -130,8 +134,9 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         } else {
                             int multiplicacion;
                             multiplicacion = listaCircular.multiplicacionNodos();
-                            JOptionPane.showMessageDialog(null, "Multiplicacion de Todos los Nodos: "
-                                    + "\t" + multiplicacion, "ATENCIÓM", 2);
+                            JOptionPane.showMessageDialog(null, """
+                                                                Multiplicacion de Todos los Nodos: 
+                                                                """ + multiplicacion, "ATENCIÓM", 2);
                         }
                         break;
                     case 13:
@@ -140,8 +145,9 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         } else {
                             int multiplicacion;
                             multiplicacion = listaCircular.multiplicacionNodosPositivos();
-                            JOptionPane.showMessageDialog(null, "Multiplicacion de Nodos Positovos: "
-                                    + "\t" + multiplicacion, "ATENCIÓM", 2);
+                            JOptionPane.showMessageDialog(null, """
+                                                                Multiplicacion de Nodos Positovos: 
+                                                                """ + multiplicacion, "ATENCIÓM", 2);
                         }
                         break;
                     case 14:
@@ -150,11 +156,34 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         } else {
                             int multiplicacion;
                             multiplicacion = listaCircular.multiplicacionNodosNegativos();
-                            JOptionPane.showMessageDialog(null, "Multiplicacion de Nodos Negativos: "
-                                    + "\t" + multiplicacion, "ATENCIÓM", 2);
+                            JOptionPane.showMessageDialog(null, """
+                                                                Multiplicacion de Nodos Negativos: 
+                                                                """ + multiplicacion, "ATENCIÓM", 2);
                         }
                         break;
                     case 15:
+                        if (listaCircular.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
+                        } else {
+                            int contador;
+                            contador = listaCircular.contadorNodosPares();
+                            JOptionPane.showMessageDialog(null, """
+                                                                Total de Nodos Pares
+                                                                """ + contador, "ATENCIÓM", 2);
+                        }
+                        break;
+                    case 16:
+                        if (listaCircular.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 3);
+                        } else {
+                            int contador;
+                            contador = listaCircular.contadorNodosImpares();
+                            JOptionPane.showMessageDialog(null, """
+                                                                Total de Nodos Impares
+                                                                """ + contador, "ATENCIÓM", 2);
+                        }
+                        break;
+                    case 17:
                         JOptionPane.showMessageDialog(null, "Gracias por tu participacion", "Bay", JOptionPane.WARNING_MESSAGE);
                         break;
                     default:
@@ -164,6 +193,6 @@ public class ListasCircularesCreacionEInsercionEDDJava {
             } catch (HeadlessException | NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Error en: " + e.toString(), "WARNING", 3);
             }
-        } while (opcion != 15);
+        } while (opcion != 17);
     }
 }

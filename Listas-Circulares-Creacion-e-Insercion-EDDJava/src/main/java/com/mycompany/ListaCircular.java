@@ -153,6 +153,35 @@ public class ListaCircular {
         return multiplicacion;
     }
 
+    //metodo para conocer cuantos numeros pares tengo
+    public int contadorNodosPares() {
+        int contador = 0;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+
+        do {
+            if (aux.dato % 2 == 0) {
+                contador++;
+            }
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+        return contador;
+    }
+
+    //metodo para saber cuantos numeros impares tengo
+    public int contadorNodosImpares() {
+        int contador = 0;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+        do {
+            if ((aux.dato % 2) != 0) {
+                contador++;
+            }
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+        return contador;
+    }
+
     //metodo para eliminar nodo
     public boolean eliminarNodo(int elemento) {
         //creamos un nodo auxiliar
