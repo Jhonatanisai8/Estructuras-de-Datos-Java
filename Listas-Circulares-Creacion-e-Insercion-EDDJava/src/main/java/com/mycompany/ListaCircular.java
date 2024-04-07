@@ -379,4 +379,11 @@ public class ListaCircular {
         return valorEliminado;
     }
 
+    public String ultimoPrimerNodo() {
+        int pri, ul;
+        pri = this.ultimo.siguiente.dato;
+        ul = ultimo.dato;
+        return "Primer Nodo de la Lista: " + pri
+                + "\nUltimo Nodo de la Lista: " + ul;
+    }
 }
