@@ -244,6 +244,34 @@ public class ListaCircular {
         return df.format(promedio);
     }
 
+    //metodo para conocer el promedio de los nodos positivos
+    public int contadorNodosPositivos() {
+        int contador = 0;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+        do {
+            if (aux.dato > 0) {
+                contador++;
+            }
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+        return contador;
+    }
+
+    //metodo para conocer el promedio de los nodos positivos
+    public int contadorNodosNegativos() {
+        int contador = 0;
+        NodoCircular aux;
+        aux = ultimo.siguiente;
+        do {
+            if (aux.dato < 0) {
+                contador++;
+            }
+            aux = aux.siguiente;
+        } while (aux != ultimo.siguiente);
+        return contador;
+    }
+
     //contador de nodos pares
     public int contadorNodos() {
         int contador = 0;
