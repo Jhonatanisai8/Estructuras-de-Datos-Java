@@ -400,4 +400,38 @@ public class ListaCircular {
         return encontrado;
     }
 
+    //metodo para saber si un numero es primo
+    public boolean numeroPrimo(int numeroPrimo) {
+
+        if (numeroPrimo == 0 || numeroPrimo == 1) {
+            //  System.out.println("No es primo");
+            return false;
+        } else {
+            int iterador = 2;
+            while (iterador <= numeroPrimo / 2) {
+                if (numeroPrimo % iterador == 0) {
+                    // System.out.println("No es primo");
+                    return false;
+                }
+                iterador++;
+            }
+            return true;
+        }
+    }
+
+    //saber cuantos nodos primos hay en la lista
+    public int contadorNumerosPrimos() {
+        int contador = 0;
+        NodoCircular temporal;
+        temporal = this.ultimo.siguiente;
+        do {
+            if (numeroPrimo(temporal.dato) == true) {
+                contador++;
+            }
+            temporal = temporal.siguiente;
+        } while (temporal != ultimo.siguiente);
+
+        return contador;
+    }
+
 }

@@ -4,7 +4,7 @@ import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
 public class ListasCircularesCreacionEInsercionEDDJava {
-
+    
     public static void main(String[] args) {
         int opcion = 0;
         int elemento;
@@ -40,10 +40,11 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         26. Promedio de Nodos Negativos
                         27. Conocer Ultimo Nodo de la Lista
                         28. Buscar Nodo
-                        29. Salir""";
+                        29. Saber cuantos Nodos Primos hay
+                        30. Salir""";
         do {
             try {
-
+                
                 opcion = Integer.parseInt(JOptionPane.showInputDialog(null, mensaje, "MENU DE OPCIONES", JOptionPane.CLOSED_OPTION));
                 switch (opcion) {
                     case 1:
@@ -319,6 +320,15 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         }
                         break;
                     case 29:
+                        if (listaCircular.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCIÓN", 2);
+                        } else {
+                            int contador;
+                            contador = listaCircular.contadorNumerosPrimos();
+                            JOptionPane.showMessageDialog(null, "Total de Nodos Primos: " + contador, "ATENCIÓN", 2);
+                        }
+                        break;
+                    case 30:
                         JOptionPane.showMessageDialog(null, "Gracias por tu participacion", "Bay", JOptionPane.WARNING_MESSAGE);
                         break;
                     default:
@@ -328,6 +338,6 @@ public class ListasCircularesCreacionEInsercionEDDJava {
             } catch (HeadlessException | NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Error en: " + e.toString(), "WARNING", 3);
             }
-        } while (opcion != 29);
+        } while (opcion != 30);
     }
 }
