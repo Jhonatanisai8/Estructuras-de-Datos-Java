@@ -331,27 +331,31 @@ public class ListaCircular {
     }
 
     //metodo para borar nodos
-    public void eliminarNodoAlFinal() {
+    public int eliminarNodoAlFinal() {
+        int elemento;
 
-        NodoCircular actual = this.ultimo;
-        NodoCircular anterior = null;
-
-        // Recorrer la lista hasta encontrar el nodo anterior al último
-        while (actual.siguiente != this.ultimo) {
-            anterior = actual;
-            actual = actual.siguiente;
-        }
-
-        // Si la lista solo tiene un nodo
-        if (anterior == null) {
+        //si hay un solo nodo
+        if (this.ultimo.siguiente == this.ultimo) {
+            elemento = this.ultimo.dato;
             this.ultimo = null;
-        } else {
-            anterior.siguiente = this.ultimo;
+            return elemento;
         }
 
-        // Eliminar el último nodo de la memoria
-        actual = null;
-        JOptionPane.showMessageDialog(null, "Nodo eliminado: " + actual, "ATENCION", 3);
+        //hay dos nodos en la lista
+        NodoCircular puntero = this.ultimo.siguiente;
+
+        //avanzamos el puntero hasta el segundo nodo desde el final
+        while (puntero.siguiente != this.ultimo) {
+            puntero = puntero.siguiente;
+        }
+
+        //guardamos el elemento
+        elemento = this.ultimo.dato;
+
+        //eliminamos
+        puntero.siguiente = this.ultimo.siguiente;
+        this.ultimo = puntero;
+        return elemento;
     }
 
     public int eliminarNodoAlInicio() {
@@ -360,8 +364,10 @@ public class ListaCircular {
 
         //si hay un solo nodo en la lista
         if (this.ultimo.siguiente == this.ultimo) {
+            //elimina si hay un solo nodo 
             this.ultimo = null;
         } else {
+            //primer nodo           apunta al segundo nodo de la listas
             this.ultimo.siguiente = this.ultimo.siguiente.siguiente;
         }
         return elemento;

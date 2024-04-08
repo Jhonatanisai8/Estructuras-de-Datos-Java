@@ -4,7 +4,7 @@ import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
 public class ListasCircularesCreacionEInsercionEDDJava {
-    
+
     public static void main(String[] args) {
         int opcion = 0;
         int elemento;
@@ -16,7 +16,7 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                          2. Agregar Un Elemento
                          3. Mostrar la Lista
                          4. ¿Buscar Elemento y Borrar?
-                         5. Borrar Nodo del fin
+                         5. Borrar Nodo del Final
                          6. Borrar Nodo del Inicio
                          7. Nodo Mayor
                          8. Nodo Menor
@@ -44,7 +44,7 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         30. Salir""";
         do {
             try {
-                
+
                 opcion = Integer.parseInt(JOptionPane.showInputDialog(null, mensaje, "MENU DE OPCIONES", JOptionPane.CLOSED_OPTION));
                 switch (opcion) {
                     case 1:
@@ -80,7 +80,9 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         break;
                     case 5:
                         if (!listaCircular.estaVacia()) {
-                            listaCircular.eliminarNodoAlFinal();
+                            int nodoElimado = listaCircular.eliminarNodoAlFinal();
+                            JOptionPane.showMessageDialog(null, "Noto elimado es: " + nodoElimado, "ATENCION", 3);
+
                         } else {
                             JOptionPane.showMessageDialog(null, "La lista circular esta vacia", "ATENCIÓN", 2);
                         }
