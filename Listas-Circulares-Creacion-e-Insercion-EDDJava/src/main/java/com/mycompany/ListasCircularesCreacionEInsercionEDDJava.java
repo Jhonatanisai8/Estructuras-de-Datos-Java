@@ -39,7 +39,8 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         25. Promedio de Nodos Positivos
                         26. Promedio de Nodos Negativos
                         27. Conocer Ultimo Nodo de la Lista
-                        28. Salir""";
+                        28. Buscar Nodo
+                        29. Salir""";
         do {
             try {
 
@@ -305,6 +306,19 @@ public class ListasCircularesCreacionEInsercionEDDJava {
                         }
                         break;
                     case 28:
+                        if (listaCircular.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La lista esta Vacia", "ATENCION", 3);
+                        } else {
+                            int dato;
+                            dato = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el Dato a Buscar: ", "BUSCANDO NODO", 2));
+                            if (listaCircular.buscarNodo(dato)) {
+                                JOptionPane.showMessageDialog(null, "Elemento " + dato + " Encontrado");
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Elemento " + dato + " no Encontrado");
+                            }
+                        }
+                        break;
+                    case 29:
                         JOptionPane.showMessageDialog(null, "Gracias por tu participacion", "Bay", JOptionPane.WARNING_MESSAGE);
                         break;
                     default:
@@ -314,6 +328,6 @@ public class ListasCircularesCreacionEInsercionEDDJava {
             } catch (HeadlessException | NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Error en: " + e.toString(), "WARNING", 3);
             }
-        } while (opcion != 28);
+        } while (opcion != 29);
     }
 }

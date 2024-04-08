@@ -386,4 +386,18 @@ public class ListaCircular {
         return "Primer Nodo de la Lista: " + pri
                 + "\nUltimo Nodo de la Lista: " + ul;
     }
+
+    public boolean buscarNodo(int dato) {
+        NodoCircular temporal;
+        temporal = this.ultimo.siguiente;
+        boolean encontrado = false;
+        do {
+            if (temporal.dato == dato) {
+                encontrado = true;
+            }
+            temporal = temporal.siguiente;
+        } while (temporal != ultimo.siguiente);
+        return encontrado;
+    }
+
 }
