@@ -355,28 +355,16 @@ public class ListaCircular {
     }
 
     public int eliminarNodoAlInicio() {
+        int elemento;
+        elemento = this.ultimo.siguiente.dato;
 
-        int valorEliminado = this.ultimo.dato;
-        NodoCircular actual = this.ultimo;
-        NodoCircular anterior = null;
-
-        // Recorrer la lista hasta encontrar el nodo anterior al primero
-        while (actual.siguiente != this.ultimo) {
-            anterior = actual;
-            actual = actual.siguiente;
-        }
-
-        // Si la lista solo tiene un nodo
-        if (anterior == null) {
+        //si hay un solo nodo en la lista
+        if (this.ultimo.siguiente == this.ultimo) {
             this.ultimo = null;
         } else {
-            anterior.siguiente = this.ultimo;
+            this.ultimo.siguiente = this.ultimo.siguiente.siguiente;
         }
-
-        // Eliminar el primer nodo de la memoria
-        actual = null;
-
-        return valorEliminado;
+        return elemento;
     }
 
     public String ultimoPrimerNodo() {
