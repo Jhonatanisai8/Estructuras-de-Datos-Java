@@ -39,6 +39,10 @@ public class Pila {
     public int cimaPila() {
         return vectarPila[cima];
     }
-    
-    
+
+    //metodo para saber el tamanio de la pila
+    public int tamanioPila() {
+        return vectarPila.length;
+    }
+
 }
