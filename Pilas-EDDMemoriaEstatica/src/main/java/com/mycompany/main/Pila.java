@@ -56,7 +56,14 @@ public class Pila {
             return true;
         }
     }
-    
-   
+
+    //metodo para mostrar la Pila
+    public String mostrarPila() {
+        String men = "";
+        for (int i = cima; i >= 0; i--) {
+            men += "[" + vectarPila[i] + "]\n";
+        }
+        return men;
+    }
 
 }

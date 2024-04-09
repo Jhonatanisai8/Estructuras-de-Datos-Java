@@ -8,13 +8,13 @@ import javax.swing.JOptionPane;
  * @author jHonatan
  */
 public class PilasEDDJava {
-
+    
     public static void main(String[] args) {
         ejemplo();
     }
-
+    
     public static void ejemplo() {
-
+        
         int opcion = 0, elemento, tam;
         tam = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el tamanio de la Pila: ", "CREANDO LA PILA", 2));
         Pila pila = new Pila(tam);
@@ -26,7 +26,8 @@ public class PilasEDDJava {
                          5. ¿Elemento que esta en la Cima?
                          6. Tamaño de la Pila
                          7. Limpiar Toda la Pila
-                         8. Salir
+                         8. Mostrar toda la Pila
+                         9. Salir
                          """;
         do {
             try {
@@ -38,7 +39,7 @@ public class PilasEDDJava {
                             JOptionPane.showMessageDialog(null, "La pila ya esta llena", "ATENCIÓN", 3);
                         } else {
                             pila.empujar(elemento);
-
+                            
                         }
                         break;
                     case 2:
@@ -73,10 +74,10 @@ public class PilasEDDJava {
                         }
                         break;
                     case 6:
-
+                        
                         int tamanio = pila.tamanioPila();
                         JOptionPane.showMessageDialog(null, "Tamaño de la Pila es:  " + tamanio, "ATENCION", 2);
-
+                        
                         break;
                     case 7:
                         if (pila.limpiarPila()) {
@@ -86,6 +87,13 @@ public class PilasEDDJava {
                         }
                         break;
                     case 8:
+                        if (pila.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La pila esta Vacia", "WARNING", 3);
+                        } else {
+                            JOptionPane.showMessageDialog(null, pila.mostrarPila(), "MOSTRANDO DATOS", 3);
+                        }
+                        break;
+                    case 9:
                         JOptionPane.showMessageDialog(null, "Gracias por participar", "ATENCIÓN", 2);
                         break;
                     default:
@@ -95,8 +103,8 @@ public class PilasEDDJava {
             } catch (HeadlessException | NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "ERROR: " + e.toString(), "WARNING", 2);
             }
-
-        } while (opcion != 8);
+            
+        } while (opcion != 9);
     }
-
+    
 }
