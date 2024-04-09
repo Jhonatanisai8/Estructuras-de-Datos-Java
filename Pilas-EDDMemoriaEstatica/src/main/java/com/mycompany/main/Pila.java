@@ -24,9 +24,14 @@ public class Pila {
         cima--;
         return fuera;
     }
-    
+
     //metodo para saber si la pila esta vacia
-    public boolean  estaVacia(){
+    public boolean estaVacia() {
         return cima == -1;
+    }
+
+    //metodo parsa saber si la pila esta llena
+    public boolean estaLlena() {
+        return vectarPila.length - 1 == cima;
     }
 }

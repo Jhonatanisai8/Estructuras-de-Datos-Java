@@ -22,7 +22,8 @@ public class PilasEDDJava {
                          1. Agregar un elemento a la Pila
                          2. Sacar un Elemento de la Pila
                          3. Saber si la Pila esta Vacia
-                         4. Salir
+                         4. Saber si la pila esta llena
+                         5. Salir
                          """;
         do {
             try {
@@ -43,7 +44,13 @@ public class PilasEDDJava {
                         } else {
                             JOptionPane.showMessageDialog(null, "La pila no esta Vacia", "WARNING", 3);
                         }
-
+                        break;
+                    case 4:
+                        if (pila.estaLlena()) {
+                            JOptionPane.showMessageDialog(null, "La pila esta llena", "ATENCION", 3);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "La pila no esta llena", "ATENCION", 3);
+                        }
                         break;
                     default:
                         throw new AssertionError();
@@ -52,7 +59,7 @@ public class PilasEDDJava {
                 JOptionPane.showMessageDialog(null, "ERROR: " + e.toString(), "WARNING", 2);
             }
 
-        } while (opcion != 4);
+        } while (opcion != 5);
     }
 
 }
