@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 public class PilasEDDJava {
 
     public static void main(String[] args) {
-
+        ejemplo();
     }
 
     public static void ejemplo() {
@@ -25,7 +25,8 @@ public class PilasEDDJava {
                          4. Saber si la pila esta llena
                          5. ¿Elemento que esta en la Cima?
                          6. Tamaño de la Pila
-                         6. Salir
+                         7. Limpiar Toda la Pila
+                         8. Salir
                          """;
         do {
             try {
@@ -33,12 +34,21 @@ public class PilasEDDJava {
                 switch (opcion) {
                     case 1:
                         elemento = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el elemento a Insertar: ", "INSERTANDO DATOS", 2));
-                        pila.empujar(elemento);
+                        if (pila.estaLlena()) {
+                            JOptionPane.showMessageDialog(null, "La pila ya esta llena", "ATENCIÓN", 3);
+                        } else {
+                            pila.empujar(elemento);
+
+                        }
                         break;
                     case 2:
                         int dato;
-                        dato = pila.sacarElemento();
-                        JOptionPane.showMessageDialog(null, "Elemento sacado es: " + dato);
+                        if (pila.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La pila esta Vacia", "WARNING", 3);
+                        } else {
+                            dato = pila.sacarElemento();
+                            JOptionPane.showMessageDialog(null, "Elemento Sacado: " + dato);
+                        }
                         break;
                     case 3:
                         if (pila.estaVacia()) {
@@ -61,24 +71,32 @@ public class PilasEDDJava {
                             int ultimo = pila.cimaPila();
                             JOptionPane.showMessageDialog(null, "Elemento que esta el la cima es: " + ultimo, "ATENCION", 2);
                         }
+                        break;
+                    case 6:
+
+                        int tamanio = pila.tamanioPila();
+                        JOptionPane.showMessageDialog(null, "Tamaño de la Pila es:  " + tamanio, "ATENCION", 2);
 
                         break;
                     case 7:
-                        if (pila.estaVacia()) {
-                            JOptionPane.showMessageDialog(null, "La pila esta Vacia", "WARNING", 3);
+                        if (pila.limpiarPila()) {
+                            JOptionPane.showMessageDialog(null, "Pila Limpiada", "ATENCIÓN", 2);
                         } else {
-                            int tamanio = pila.tamanioPila();
-                            JOptionPane.showMessageDialog(null, "Tamaño de la Pila es:  " + tamanio, "ATENCION", 2);
+                            JOptionPane.showMessageDialog(null, "La pila esta Vacia", "ATENCIÓN", 3);
                         }
                         break;
+                    case 8:
+                        JOptionPane.showMessageDialog(null, "Gracias por participar", "ATENCIÓN", 2);
+                        break;
                     default:
-                        throw new AssertionError();
+                        JOptionPane.showMessageDialog(null, "Eliga una opcion Correcta", "ATENCIÓN", 3);
+                        break;
                 }
             } catch (HeadlessException | NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "ERROR: " + e.toString(), "WARNING", 2);
             }
 
-        } while (opcion != 5);
+        } while (opcion != 8);
     }
 
 }

@@ -45,4 +45,18 @@ public class Pila {
         return vectarPila.length;
     }
 
+    //metodo para limpiar todo la pila
+    public boolean limpiarPila() {
+        if (estaVacia()) {
+            return false;
+        } else {
+            while (!estaVacia()) {
+                sacarElemento();
+            }
+            return true;
+        }
+    }
+    
+   
+
 }
