@@ -24,4 +24,9 @@ public class Pila {
         cima--;
         return fuera;
     }
+    
+    //metodo para saber si la pila esta vacia
+    public boolean  estaVacia(){
+        return cima == -1;
+    }
 }
