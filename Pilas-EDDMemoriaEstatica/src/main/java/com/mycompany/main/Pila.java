@@ -34,4 +34,11 @@ public class Pila {
     public boolean estaLlena() {
         return vectarPila.length - 1 == cima;
     }
+
+    //metodo para saber que elemento esta en la cima
+    public int cimaPila() {
+        return vectarPila[cima];
+    }
+    
+    
 }

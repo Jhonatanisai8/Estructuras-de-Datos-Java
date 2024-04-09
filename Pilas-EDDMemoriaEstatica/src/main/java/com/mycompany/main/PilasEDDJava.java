@@ -23,7 +23,8 @@ public class PilasEDDJava {
                          2. Sacar un Elemento de la Pila
                          3. Saber si la Pila esta Vacia
                          4. Saber si la pila esta llena
-                         5. Salir
+                         5. ¿Elemento que esta en la Cima?
+                         6. Salir
                          """;
         do {
             try {
@@ -50,6 +51,14 @@ public class PilasEDDJava {
                             JOptionPane.showMessageDialog(null, "La pila esta llena", "ATENCION", 3);
                         } else {
                             JOptionPane.showMessageDialog(null, "La pila no esta llena", "ATENCION", 3);
+                        }
+                        break;
+                    case 5:
+                        if (pila.estaVacia()) {
+                            JOptionPane.showMessageDialog(null, "La pila esta Vacia", "WARNING", 3);
+                        } else {
+                            int ultimo = pila.cimaPila();
+                            JOptionPane.showMessageDialog(null, "Elemento que esta el la cima es: " + ultimo, "ATENCION", 2);
                         }
                         break;
                     default:
