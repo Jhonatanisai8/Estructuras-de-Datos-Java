@@ -20,7 +20,24 @@ public class ListaSimple {
         if (fin == null) {
             fin = inicio;
         }
-        return "Elemento Insertado";
+        return "Elemento Insertado al Inicio";
+    }
+
+    //metodo para agregar al final
+    public String agregarFinal(String dato) {
+        if (!estaVacia()) {
+            //creamos el nodo 
+            fin.siguiente = new Nodo(dato);
+            fin = fin.siguiente;
+        } else {
+            inicio = fin = new Nodo(dato);
+        }
+        return "Elemento insertado al Final";
+    }
+
+    //metodo para saber si la lista esta vacia
+    public boolean estaVacia() {
+        return inicio == null;
     }
 
 }
