@@ -161,7 +161,7 @@ public class ListaSimple {
 
     //metodo para saber el primero y el ultimo de la lista
     public String ultimoPrimero() {
-        return "Primero: " + fin.dato
-                + "\nUltimo: " + inicio.dato;
+        return "Primero: " + inicio.dato
+                + "\nUltimo: " + fin.dato;
     }
 }
