@@ -126,4 +126,22 @@ public class ListaSimple {
         }
         return encontrado;
     }
+
+    //metodo para buscar un nodo
+    public boolean buscarNodo(String elemento) {
+        boolean encontrado = false;
+        if (estaVacia()) {
+            encontrado = false;
+        } else {
+            Nodo recorer;
+            recorer = inicio;
+            while (recorer != null) {
+                if (recorer.dato.equals(elemento)) {
+                    encontrado = true;
+                }
+                recorer = recorer.siguiente;
+            }
+        }
+        return encontrado;
+    }
 }
