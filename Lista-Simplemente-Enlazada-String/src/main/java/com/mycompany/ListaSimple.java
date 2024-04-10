@@ -91,4 +91,39 @@ public class ListaSimple {
         }
         return el;
     }
+
+    //metodo `para buscar un nodo y eliminarlo
+    public boolean eliminarNodoEspecifico(String dato) {
+        boolean encontrado = false;
+        if (!estaVacia()) {
+            //cuando hay un solo nodo
+            if (inicio == fin && dato.equals(inicio.dato)) {
+                inicio = null;
+                fin = null;
+                encontrado = true;
+            } else if (dato.equals(inicio.dato)) { // minimo tenemos dos nodos
+                inicio = inicio.siguiente;
+                encontrado = true;
+            } else {
+                //tenemos mas de dos nodos
+                Nodo anterior, temporal;
+                anterior = inicio;
+                temporal = inicio.siguiente;
+
+                while (temporal != null && !temporal.dato.equals(dato)) {
+                    anterior = anterior.siguiente;
+                    temporal = temporal.siguiente;
+                }
+
+                if (temporal != null) {
+                    anterior.siguiente = temporal.siguiente;
+                    if (temporal == fin) {
+                        fin = anterior;
+                    }
+                    encontrado = true;
+                }
+            }
+        }
+        return encontrado;
+    }
 }
