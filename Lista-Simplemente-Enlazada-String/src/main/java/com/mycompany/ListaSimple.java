@@ -40,4 +40,18 @@ public class ListaSimple {
         return inicio == null;
     }
 
+    public String mostrarLista() {
+        String mensaje = "";
+        if (estaVacia()) {
+            mensaje = "La lista esta Vacia";
+        } else {
+            Nodo recorrer;
+            recorrer = inicio;
+            while (recorrer != null) {
+                mensaje += "|" + recorrer.dato + "|-->";
+                recorrer = recorrer.siguiente;
+            }
+        }
+        return mensaje;
+    }
 }
