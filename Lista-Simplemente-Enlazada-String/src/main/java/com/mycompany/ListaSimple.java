@@ -144,4 +144,18 @@ public class ListaSimple {
         }
         return encontrado;
     }
+
+    //metodo para borrar toda la lista
+    public boolean borrarLista() {
+        boolean borrar = false;
+        if (estaVacia()) {
+            borrar = false;
+        } else {
+            while (!estaVacia()) {
+                borrarFinal();
+            }
+            borrar = true;
+        }
+        return borrar;
+    }
 }
