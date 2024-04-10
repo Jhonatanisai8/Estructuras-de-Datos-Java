@@ -146,7 +146,7 @@ public class ListaSimple {
     }
 
     //metodo para borrar toda la lista
-    public boolean borrarLista() {
+    public boolean borrarLista(ListaSimple listaSimple) {
         boolean borrar = false;
         if (estaVacia()) {
             borrar = false;
@@ -157,5 +157,11 @@ public class ListaSimple {
             borrar = true;
         }
         return borrar;
+    }
+
+    //metodo para saber el primero y el ultimo de la lista
+    public String ultimoPrimero() {
+        return "Primero: " + fin.dato
+                + "\nUltimo: " + inicio.dato;
     }
 }
