@@ -40,6 +40,7 @@ public class ListaSimple {
         return inicio == null;
     }
 
+    //metodo para mostrar la lista
     public String mostrarLista() {
         String mensaje = "";
         if (estaVacia()) {
@@ -53,5 +54,41 @@ public class ListaSimple {
             }
         }
         return mensaje;
+    }
+
+    //metodo para borrar nodo del inicio
+    public String borrarInicio() {
+        String el;
+        el = inicio.dato;
+        //cuando hay un solo nodo
+        if (inicio == fin) {
+            inicio = null;
+            fin = null;
+        } else {
+            //cuando hay mas de dos nodos
+            inicio = inicio.siguiente;
+        }
+        return el;
+    }
+
+    //metodo para borrar del final
+    public String borrarFinal() {
+        String el;
+        el = fin.dato;
+        //cuando hay un solo nodo
+        if (inicio == fin) {
+            inicio = null;
+            fin = null;
+        } else {
+            //cuando hay mas de dos nodos
+            Nodo temporal;
+            temporal = inicio;
+            while (temporal.siguiente != fin) {
+                temporal = temporal.siguiente;
+            }
+            fin = temporal;
+            fin.siguiente = null;
+        }
+        return el;
     }
 }
