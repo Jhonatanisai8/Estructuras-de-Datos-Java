@@ -44,9 +44,21 @@ public class Pila {
     public String mostrarPila() {
         String men = "";
         for (int i = cima; i >= 0; i--) {
-            men += "[" + vectorPila[i] + "]";
+            men += "[" + vectorPila[i] + "]\n\t";
         }
         return men;
+    }
+
+    public boolean estaLlena() {
+        return vectorPila.length - 1 == cima;
+    }
+
+    public String cimaPila() {
+        return vectorPila[cima];
+    }
+
+    public int tamanioPila() {
+        return vectorPila.length;
     }
 
 }
