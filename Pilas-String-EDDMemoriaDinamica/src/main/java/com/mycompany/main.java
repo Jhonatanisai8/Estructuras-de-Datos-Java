@@ -18,15 +18,17 @@ public class main {
         String ele;
         tam = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el tamanio de la pila: ", "BIENVENIDO", 2));
         Pila pila = new Pila(tam);
-        String mensaje = "1.Añadir un elemento"
-                + "\n2.Sacar un elemento"
-                + "\n3.¿La lista esta vacia?"
-                + "\n4.¿La lista esta llena?"
-                + "\n5.Saber el elemento que esta en la cima"
-                + "\n6.¿Saber el tamanio de la pila?"
-                + "\n7.Limpiar Toda la Pila"
-                + "\n8.Mostrar la Pila"
-                + "\n9.SALIR";
+        String mensaje = """
+                         1.Añadir un elemento
+                         2.Sacar un elemento
+                         3.¿La lista esta vacia?
+                         4.¿lista esta llena?
+                         5.Saber el elemento que esta en la cima
+                         6.Saber el tamanio de la pila?
+                         7.Limpiar Toda la Pila
+                         8.Mostrar la Pila
+                         9.Buscar un elemento en la Pila
+                         10.SALIR""";
         do {
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null, mensaje, "MENU DE OPCIONEZ", 2));
             switch (opcion) {
@@ -77,7 +79,7 @@ public class main {
                             JOptionPane.showMessageDialog(null, "Pila Limpiada", "ATENCION", 3);
                             pila.limpiarPila();
                         } else {
-                            
+
                         }
                     } else {
                         JOptionPane.showMessageDialog(null, "Pila Vacia, lo siento", "WARNING", 3);
@@ -90,11 +92,23 @@ public class main {
                         JOptionPane.showMessageDialog(null, pila.mostrarPila(), "ELEMENTOS DE LA PILA", 2);
                     }
                     break;
+                case 9:
+                    if (!pila.estaVacia()) {
+                        ele = JOptionPane.showInputDialog(null, "Ingresa el elemento a buscar", "BUSCAR ELEMENTO", 2);
+                        if (pila.buscarElemento(ele)) {
+                            JOptionPane.showMessageDialog(null, "Elemento encontrado", "ATENCION", 2);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Elemento no encontrado", "ATENCION", 2);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Pila Vacia, lo siento", "WARNING", 3);
+                    }
+                    break;
                 default:
                     JOptionPane.showMessageDialog(null, "Ingresa una opcion correcta", "ATENCION", 2);
                     break;
             }
-        } while (opcion != 9);
+        } while (opcion != 10);
     }
 
 }

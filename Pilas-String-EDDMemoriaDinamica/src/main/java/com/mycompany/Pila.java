@@ -49,6 +49,16 @@ public class Pila {
         return men;
     }
 
+    public boolean buscarElemento(String elemento) {
+        boolean encontrado = false;
+        for (int i = cima; i >= 0; i--) {
+            if (vectorPila[i].equalsIgnoreCase(elemento)) {
+                encontrado = true;
+            }
+        }
+        return encontrado;
+    }
+
     public boolean estaLlena() {
         return vectorPila.length - 1 == cima;
     }
