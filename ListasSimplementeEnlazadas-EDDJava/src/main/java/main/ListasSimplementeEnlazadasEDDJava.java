@@ -12,7 +12,7 @@ public class ListasSimplementeEnlazadasEDDJava {
         int opcion = 0;
         String mensaje = """
                          1. Insertar Al inicio
-                         2.Agregar Al final
+                         2. Agregar Al final
                          3. Mostrar Lista
                          4. Borrar Nodo del Inicio
                          5. Borar Nodo del final
