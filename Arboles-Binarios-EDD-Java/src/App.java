@@ -12,10 +12,11 @@ public class App {
         do {
             try {
                 opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "1. Agregar un Nodo \n" +
-                        "2. Salir\n", "menu de opciones", JOptionPane.INFORMATION_MESSAGE));
+                        "2. Recorrer en InOrden\n" +
+                        "3. Salir\n", "menu de opciones", JOptionPane.INFORMATION_MESSAGE));
                 switch (opcion) {
 
-                    //opcion de agregar
+                    // opcion de agregar
                     case 1:
                         // peticion de datos
                         elemento = Integer.parseInt(JOptionPane.showInputDialog(null, "INGRESE UN ELEMENTOn (int)",
@@ -25,6 +26,13 @@ public class App {
                         arbolBinario.agregarNodo(elemento, nombre);
                         break;
                     case 2:
+                        if (!arbolBinario.estaVacia()) {
+                            arbolBinario.inOrden(arbolBinario.raiz);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "El arbol esta vacio");
+                        }
+                        break;
+                    case 3:
                         JOptionPane.showMessageDialog(null, "GRACIAS POR PARTICIPAR");
                         break;
                     default:
@@ -34,6 +42,7 @@ public class App {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "ERROR EN: " + e.toString());
             }
-        } while (opcion != 2);
+            
+        } while (opcion != 3);
     }
 }

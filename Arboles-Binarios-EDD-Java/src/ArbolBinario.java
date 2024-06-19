@@ -33,9 +33,18 @@ public class ArbolBinario {
         }
     }
 
-    //metodo para recorrer el arbol
+    // metodo para ver si el arbol esta vacio
     public boolean estaVacia() {
         return raiz == null;
     }
-    
+
+    // metodo para recorrer el arbol
+    public void inOrden(NodoArbol r) {
+        if (r != null) {
+            inOrden(r.hijoIzquierdo);
+            System.out.print("|" + r.dato + "| ,");
+            inOrden(r.hijoDerecho);
+        }
+    }
+
 }
