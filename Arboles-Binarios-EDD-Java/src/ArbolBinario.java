@@ -40,9 +40,10 @@ public class ArbolBinario {
 
     // metodo para recorrer el arbol
     public void inOrden(NodoArbol r) {
+        
         if (r != null) {
             inOrden(r.hijoIzquierdo);
-            System.out.print("|" + r.dato + "| ,");
+            System.out.print(" |" + r.dato + "|,");
             inOrden(r.hijoDerecho);
         }
     }
@@ -50,9 +51,18 @@ public class ArbolBinario {
     // metodo para recorrer el arbol en preOrden
     public void preOrden(NodoArbol r) {
         if (r != null) {
-            System.out.print("|" + r.dato + "| ,");
+            System.out.print("| " + r.dato + "| ,");
             preOrden(r.hijoIzquierdo);
             preOrden(r.hijoDerecho);
+        }
+    }
+
+    // metodo para recorrer el arbol en postOrden
+    public void postOrden(NodoArbol r) {
+        if (r != null) {
+            postOrden(r.hijoIzquierdo);
+            postOrden(r.hijoDerecho);
+            System.out.print("| " + r.dato + "| ,");
         }
     }
 

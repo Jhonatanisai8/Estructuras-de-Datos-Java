@@ -14,7 +14,8 @@ public class App {
                 opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "1. Agregar un Nodo \n" +
                         "2. Recorrer en In-Orden\n" +
                         "3. Recorrer en Pre-Orden\n" +
-                        "4. Salir\n", "menu de opciones", JOptionPane.INFORMATION_MESSAGE));
+                        "4. Recorrer en Post-Orden\n" +
+                        "5. Salir\n", "menu de opciones", JOptionPane.INFORMATION_MESSAGE));
                 switch (opcion) {
 
                     // opcion de agregar
@@ -28,6 +29,7 @@ public class App {
                         break;
                     case 2:
                         if (!arbolBinario.estaVacia()) {
+                            System.out.println("Recorrido en In-Orden");
                             arbolBinario.inOrden(arbolBinario.raiz);
                             System.out.println();
                         } else {
@@ -36,6 +38,7 @@ public class App {
                         break;
                     case 3:
                         if (!arbolBinario.estaVacia()) {
+                            System.out.println("Recorrido en Pre-Orden");
                             arbolBinario.preOrden(arbolBinario.raiz);
                             System.out.println();
                         } else {
@@ -44,6 +47,15 @@ public class App {
                         break;
 
                     case 4:
+                        if (!arbolBinario.estaVacia()) {
+                            System.out.println("Recorrido en Post-Orden");
+                            arbolBinario.postOrden(arbolBinario.raiz);
+                            System.out.println();
+                        } else {
+                            JOptionPane.showMessageDialog(null, "El arbol esta vacio");
+                        }
+                        break;
+                    case 5:
                         JOptionPane.showMessageDialog(null, "GRACIAS POR PARTICIPAR");
                         break;
                     default:
@@ -54,6 +66,6 @@ public class App {
                 JOptionPane.showMessageDialog(null, "ERROR EN: " + e.toString());
             }
 
-        } while (opcion != 4);
+        } while (opcion != 5);
     }
 }
