@@ -47,4 +47,13 @@ public class ArbolBinario {
         }
     }
 
+    // metodo para recorrer el arbol en preOrden
+    public void preOrden(NodoArbol r) {
+        if (r != null) {
+            System.out.print("|" + r.dato + "| ,");
+            preOrden(r.hijoIzquierdo);
+            preOrden(r.hijoDerecho);
+        }
+    }
+
 }
