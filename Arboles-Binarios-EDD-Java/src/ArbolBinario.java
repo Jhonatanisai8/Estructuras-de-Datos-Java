@@ -32,4 +32,10 @@ public class ArbolBinario {
             }
         }
     }
+
+    //metodo para recorrer el arbol
+    public boolean estaVacia() {
+        return raiz == null;
+    }
+    
 }

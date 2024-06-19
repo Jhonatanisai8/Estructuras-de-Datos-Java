@@ -14,11 +14,13 @@ public class App {
                 opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "1. Agregar un Nodo \n" +
                         "2. Salir\n", "menu de opciones", JOptionPane.INFORMATION_MESSAGE));
                 switch (opcion) {
+
+                    //opcion de agregar
                     case 1:
                         // peticion de datos
-                        elemento = Integer.parseInt(JOptionPane.showInputDialog(null, "INGRESE UN ELEMENTO",
+                        elemento = Integer.parseInt(JOptionPane.showInputDialog(null, "INGRESE UN ELEMENTOn (int)",
                                 "INGRESANDO DATOS AL ARBOL...", JOptionPane.INFORMATION_MESSAGE));
-                        nombre = JOptionPane.showInputDialog(null, "INGRESE UN ELEMENTO",
+                        nombre = JOptionPane.showInputDialog(null, "INGRESE UN ELEMENTO (String)",
                                 "INGRESANDO DATOS AL ARBOL...", JOptionPane.INFORMATION_MESSAGE);
                         arbolBinario.agregarNodo(elemento, nombre);
                         break;
